@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IEmployee } from './IEmployee';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
@@ -19,7 +20,10 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
     this.qualification = this.dataService.getQualifications();
     this.experience = this.dataService.getExperiences();
+  }
 
+  onSubmit(form: NgForm) {
+    console.log(form.value);
   }
 
 }

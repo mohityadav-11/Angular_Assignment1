@@ -9,6 +9,11 @@ export interface IEmployee {
   gender: string;
   qualification: string;
   experience: string;
-  codelang: string;
+  codelang1: string;
+  codelang2: string;
+  codelang3: string;
+  codelang4: string;
+  codelang5: string;
+
 }
 
