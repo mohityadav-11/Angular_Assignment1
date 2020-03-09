@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IEmployee } from './IEmployee';
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  employee: IEmployee;
+  qualification: Observable<string[]>;
+  experience: Observable<string[]>;
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.qualification = this.dataService.getQualifications();
+    this.experience = this.dataService.getExperiences();
+
   }
 
 }
